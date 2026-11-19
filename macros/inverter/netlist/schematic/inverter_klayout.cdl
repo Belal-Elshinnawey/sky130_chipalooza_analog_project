@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/sky130_chipalooza_analog_project/macros/inverter/schematic/xschem/inverter.sch
+.subckt inverter VDD vin vout VSS
+*.PININFO VDD:B VSS:B vin:I vout:O
+XM1 vout vin VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2.5 W='2 * 10 ' nf=10
+XM2 vout vin VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=2.5 W='2 * 10 ' nf=10
+.ends

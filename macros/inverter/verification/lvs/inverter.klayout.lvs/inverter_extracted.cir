@@ -1,0 +1,8 @@
+* Extracted by KLayout with SKY130 LVS runset on : 19/11/2026 23:28
+
+.SUBCKT inverter VDD VSS vin vout
+M$1 VDD vin vout VDD sky130_fd_pr__pfet_g5v0d10v5 L=2.5 W=20 AS=5.1 AD=5.1
++ PS=27.1 PD=27.1
+M$11 VSS vin vout VSS sky130_fd_pr__nfet_g5v0d10v5 L=2.5 W=20 AS=5.1 AD=5.1
++ PS=27.1 PD=27.1
+.ENDS inverter

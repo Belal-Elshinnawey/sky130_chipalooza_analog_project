@@ -1,0 +1,58 @@
+* PEX produced on Thu Nov 19 11:46:31 PM CET 2026 using /foss/tools/sak/sak-pex.sh with m=3 and s=1 (extresist threshold=10000 mOhm, minres=1000 mOhm, mindelay=1 ps)
+* NGSPICE file created from inverter_pex.ext - technology: sky130A
+
+.subckt inverter_pex VDD vin vout VSS
+X0 VDD vin vout VDD.t1 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X1 vout vin VSS VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.6 ps=4.6 w=2 l=2.5
+X2 vout vin VDD VDD.t0 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.6 ps=4.6 w=2 l=2.5
+X3 vout vin VDD VDD.t2 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X4 VDD vin vout VDD.t5 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X5 vout vin VDD VDD.t4 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X6 vout vin VSS VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X7 VDD vin vout VDD.t3 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X8 VSS vin vout VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X9 VDD vin vout VDD.t7 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X10 vout vin VSS VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X11 VSS vin vout VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X12 vout vin VDD VDD.t6 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X13 vout vin VSS VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X14 VSS vin vout VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X15 VDD.t10 vin vout VDD.t9 sky130_fd_pr__pfet_g5v0d10v5 ad=0.6 pd=4.6 as=0.5 ps=2.5 w=2 l=2.5
+X16 VSS vin vout VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X17 vout vin VDD VDD.t8 sky130_fd_pr__pfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X18 vout vin VSS VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.5 pd=2.5 as=0.5 ps=2.5 w=2 l=2.5
+X19 VSS.t9 vin vout VSS.t0 sky130_fd_pr__nfet_g5v0d10v5 ad=0.6 pd=4.6 as=0.5 ps=2.5 w=2 l=2.5
+R0 VSS.t9 VSS.t0 4902.93
+R1 VSS.t0 VSS 247.691
+R2 VSS.t9 VSS 39.1655
+R3 VDD.t1 VDD.t0 833.333
+R4 VDD.t2 VDD.t1 833.333
+R5 VDD.t3 VDD.t2 833.333
+R6 VDD.t4 VDD.t3 833.333
+R7 VDD.t5 VDD.t4 833.333
+R8 VDD.t6 VDD.t5 833.333
+R9 VDD.t7 VDD.t6 833.333
+R10 VDD.t8 VDD.t7 833.333
+R11 VDD.t9 VDD.t8 833.333
+R12 VDD.t10 VDD 119.272
+R13 VDD.t10 VDD.t9 35469.9
+R14 VDD VDD.t9 569.573
+C0 VDD vin 8.11295f
+C1 VDD vout 3.66526f
+C2 vin vout 11.2494f
+C3 vout VSS 5.04443f
+C4 vin VSS 9.58895f
+C5 VDD VSS 4.93315f
+C6 VDD.t0 VSS 1.03462f
+C7 VDD.t1 VSS 0.88304f
+C8 VDD.t2 VSS 0.88304f
+C9 VDD.t3 VSS 0.88304f
+C10 VDD.t4 VSS 0.88304f
+C11 VDD.t5 VSS 0.88304f
+C12 VDD.t6 VSS 0.88304f
+C13 VDD.t7 VSS 0.88304f
+C14 VDD.t8 VSS 0.88304f
+C15 VDD.t9 VSS 0.76429f
+C16 VDD.t10 VSS 0.06005f
+.ends
+
