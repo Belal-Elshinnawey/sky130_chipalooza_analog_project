@@ -293,10 +293,6 @@ symbol-check: ## Check <CELL>.sym against the powered netlist ports, runs inside
 
 
 # Generate XSPICE Target
-# TODO: the reference .lib path/corner below is carried over from the IHP sg13cmos5l port and is
-# wrong for this PDK. Point it at $(STD_CELL_LIBRARY)'s typical-corner .lib under
-# $(PDK_ROOT)/$(PDK)/libs.ref/ once config.yaml's STA_CORNERS/LIB section is re-ported (see
-# flow/librelane/config.yaml).
 generate-xspice: ## Generate XSPICE model from the LibreLane-extracted SPICE netlist
 	$(MAKE) symbol-check CELL=$(TOP)
 	mkdir -p $(XSPICE_DIR)
