@@ -149,7 +149,7 @@ build-top: ## Build TOP cell (check PR boundary, Verilog, LEF, LIB, copy GDS, an
 
 
 # PR Boundary Check Target
-check-boundary: ## Check that the TOP cell layout carries the PR boundary box on layer 189 that the chip flow needs
+check-boundary: ## Check that the TOP cell layout carries the PR boundary box on layer 235 that the chip flow needs
 	python3 $(SCRIPTS_DIR)/check_boundary.py $(LAY_DIR)/$(TOP).gds $(TOP)
 .PHONY: check-boundary
 # ================================================================================================

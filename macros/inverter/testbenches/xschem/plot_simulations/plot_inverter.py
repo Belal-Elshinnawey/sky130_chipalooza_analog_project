@@ -177,9 +177,7 @@ def main():
     gain_color = '#ff6b35'
     vin_color = '#2f855a'
 
-    # This inverter uses sky130's g5v0d10v5 (thick-oxide, 5V-class) nfet/pfet pair run
-    # at VDD=3.3V (set in the testbenches' .param VDD=3.3) -- keep these axis ranges in
-    # sync with that.
+    # Keep in sync with the testbenches' .param VDD=3.3
     vdd_axis = 3.3
 
     fig2, ax1 = plt.subplots(figsize=(10, 6.2))

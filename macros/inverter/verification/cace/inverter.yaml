@@ -171,12 +171,8 @@ parameters:
         typical: 1.2
         # maximum: 1.5
       corner_mos:
-        # sky130.lib.spice ships these 5 process corner .lib sections (nfet/pfet, any voltage
-        # class, selected together): tt, sf, ff, ss, fs. Unlike gf180mcuD's sm141064.ngspice,
-        # there is no separate "res_<corner>" resistor axis here -- every corner section above
-        # already bundles its own nominal resistor parameters (parameters_res_nom.spice), so
-        # corner_r below is kept for parity with the gf180 template but isn't wired into a
-        # second .lib call (see templates/inverter_tb_ac.sch).
+        # sky130.lib.spice's 5 corners (tt/sf/ff/ss/fs) bundle resistor params too, unlike
+        # gf180's separate "res_<corner>" axis - corner_r below is parity-only, not wired in.
         enumerate: [ss, sf, tt, fs, ff]
         # typical: tt
       corner_r:
@@ -254,9 +250,7 @@ parameters:
         step: linear
         stepsize: 1
       corner_mos:
-        # sky130's statistical/global-variation corner section is named "mc" (sets
-        # MC_PR_SWITCH=1, MC_MM_SWITCH=0 by default -- see inverter.yaml's note under
-        # ac_params and templates/inverter_tb_ac.sch), unlike gf180mcuD's "statistical" name.
+        # sky130's global-variation corner section is named "mc" (gf180's equivalent is "statistical")
         typical: mc
       corner_r:
         typical: statistical

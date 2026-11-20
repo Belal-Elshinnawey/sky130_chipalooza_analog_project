@@ -61,14 +61,10 @@ CLOCK_NET: clock_i
 CLOCK_PERIOD: 20 # in ns == 50 MHz
 
 # Define Standard Cells
-# No custom LIB/STA_CORNERS/DEFAULT_CORNER here (unlike the IHP sg13cmos5l port this project
-# descends from, which needed them hand-written since LibreLane has no IHP defaults): sky130A is
-# LibreLane's own flagship PDK, so leaving these unset falls back to its built-in sky130A corner
-# set, which resolves both the sky130_fd_sc_hd std-cell libs and any default sky130_fd_io IO-pad
-# libs consistently. A hand-rolled 5-corner set (ff/ss/tt at matching std-cell lib names) broke
-# here specifically because the IO-pad libs use a different, more complex corner-naming
-# convention (extra supply-rail voltage suffixes) with no variant matching invented names like
-# "ff_100C_1v95" - see OpenROAD.RepairDesignPostGPL's STA-1112 error if this regresses.
+# No custom LIB/STA_CORNERS/DEFAULT_CORNER: sky130A is LibreLane's own flagship PDK, so leaving
+# these unset uses its built-in corner set (resolves std-cell + IO-pad libs consistently). A
+# hand-rolled corner set broke here - IO-pad libs use a different, more complex naming convention
+# (see OpenROAD.RepairDesignPostGPL's STA-1112 error if this regresses).
 STD_CELL_LIBRARY: sky130_fd_sc_hd
 
 # Fix setup violations

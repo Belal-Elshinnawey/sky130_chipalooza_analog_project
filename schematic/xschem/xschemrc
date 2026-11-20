@@ -16,18 +16,13 @@ if { ![info exists env(PDK)] } {
   set ::env(PDK) sky130A
 }
 
-# Source the PDK xschemrc file (guarded by our own sentinel: the PDK's xschemrc does
-# "set XSCHEM_LIBRARY_PATH {}" unconditionally, so re-sourcing it from every chained
-# xschemrc would wipe out every library path appended by the ones sourced before it)
+# Source the PDK xschemrc once (it resets XSCHEM_LIBRARY_PATH, so re-sourcing would wipe paths already appended)
 if {![info exists ::XSCHEM_PDK_RC_SOURCED]} {
     source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
     set ::XSCHEM_PDK_RC_SOURCED 1
 }
 
-# Fallback for save_params(): gf180mcuD/IHP's own xschem-menu defines this (a fet-parameter
-# .save-line generator for mixed-signal debug backannotation), but sky130A's open_pdks install
-# ships no equivalent "xschem-menu" file at all - it provides the same feature under a
-# different name (sky130_save_fet_params). Only define save_params if the PDK didn't already.
+# sky130A has no xschem-menu (where gf180mcuD/IHP define save_params); fall back to its own sky130_save_fet_params
 if {![llength [info commands save_params]]} {
   proc save_params {} {
     if {[llength [info commands sky130_save_fet_params]]} {

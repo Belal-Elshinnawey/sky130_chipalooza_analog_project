@@ -5,9 +5,9 @@
 import argparse
 import sys
 
-# GDS layer of prBoundary. Magic maps every datatype of it to its boundary layer (cifin: calma BOUND 189 *),
-# and LibreLane's Magic.StreamOut reads the FIXED_BBOX derived from it for every macro it places.
-BOUNDARY_LAYER = 189
+# GDS layer of the PR/die boundary on sky130A (sky130A's own KLayout density-check deck,
+# libs.tech/klayout/drc/met_min_ca_density.lydrc, reads it as "input(235, 4)").
+BOUNDARY_LAYER = 235
 
 
 def boundary_shapes(kdb, layout, cell, layer):
@@ -56,7 +56,7 @@ def main():
         print(f"[ERROR] {args.layout}: cell '{args.cell}' draws no shape on the PR boundary layer "
               f"{args.layer}. The chip flow derives the macro bounding box from it and fails without "
               f"it ('Failed to extract PR boundary from GDSII view of macro'). Draw the boundary box "
-              f"on prBoundary ({args.layer}/0) in the layout source and re-export the GDS.",
+              f"on the die boundary layer ({args.layer}/4) in the layout source and re-export the GDS.",
               file=sys.stderr)
         return 1
 
